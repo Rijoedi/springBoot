@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Guest List VIP</title>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+	<div class="container">
+
+		<div id="guestList">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>名前</th>
+							<th>E-mail</th>
+							<th>電話番号</th>
+						</tr>
+					</thead>
+					<tr th:each="guest : ${guests}">
+						<td><span th:text="${guest.name}" name = "name"></span></td>
+						<td><span th:text="${guest.email}"></span></td>
+						<td><span th:text="${guest.tel}"></span></td>
+						<td><a th:href="@{/delete/{id}(id=${guest.idguest})}">削除</a></td>
+					</tr>
+				</table>
+			<form action="save" method="post">
+				<div class="form-group">
+					<label for="nome">名前</label> <input type="text"
+						class="form-control" id="name" name="name" placeholder="名前" />
+				</div>
+				<div class="form-group">
+					<label for="email">E-mail</label> <input type="email"
+						class="form-control" id="email" name="email" placeholder="Email" />
+				</div>
+				<div class="form-group">
+					<label for="telefone">電話番号</label> <input type="text"
+						class="form-control" id="tel" name="tel" placeholder="電話番号" />
+				</div>
+				<button type="submit" class="btn btn-success">登録</button>
+			</form>
+		</div>
+
+	</div>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>
