@@ -10,30 +10,10 @@
 	<div class="container">
 
 		<div id="guestList">
-			<table class="table table-hover">
-				<thead>
-					<tr>
-						<th>名前</th>
-						<th>E-mail</th>
-						<th>電話番号</th>
-					</tr>
-				</thead>
-				<tr th:each="guest : ${guests}">
-					<td><span th:text="${guest.name}"></span></td>
-					<td><span th:text="${guest.email}"></span></td>
-					<td><span th:text="${guest.tel}"></span></td>
-					 <td><form th:action="@{/update}" method="post">
-						<input type="hidden" name="id" th:value="${guest.idguest}" /> <input
-							type="submit" value="Edit" class="btn btn-warning" />
-					</form></td>
-					<td><form th:action="@{/delete}" method="post">
-						<input type="hidden" name="id" th:value="${guest.idguest}" /> <input
-							type="submit" value="Delete" class="btn btn-danger" />
-					</form></td>
-				</tr>
-			</table>
 			<form action="#" th:action="@{/save}" method="post">
-				
+				<div class="form-group">
+					<input type="hidden" class="form-control" id="idguest" name="idguest" th:value="*{idguest}" />
+				</div>
 				<div class="form-group">
 					<label for="nome">名前</label> 
 					<input type="text" class="form-control" id="name" name="name" th:value="*{name}"placeholder="名前" />
