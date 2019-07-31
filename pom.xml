@@ -41,5 +41,13 @@
 			<version>2.1.6.RELEASE</version>
 		</dependency>
 
+
+		<!-- CUSTOM SEND E-MAIL .JAR -->
+		<dependency>
+			<groupId>com.enviadorEmail</groupId>
+			<artifactId>enviadorEmail</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
 	</dependencies>
 </project>

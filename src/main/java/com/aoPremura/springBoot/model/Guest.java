@@ -25,6 +25,11 @@ public class Guest {
 	@Column(name = "tel")
 	private String tel;
 	
+	@Override
+	public String toString() {
+		return "名前: " + name + "\n" + "E-mail: " + email + "\n" + "電話番号: " + tel + "\n";
+	}
+	
 	// GET && SET //
 	
 	public Guest() {
